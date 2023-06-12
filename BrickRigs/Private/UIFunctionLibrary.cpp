@@ -39,6 +39,10 @@ FText UUIFunctionLibrary::GetAmmoTypeDisplayText(EAmmoType InAmmoType) {
     return FText::GetEmpty();
 }
 
+bool UUIFunctionLibrary::FilterTextForURLs(const FText& InText, FText& OutText) {
+    return false;
+}
+
 bool UUIFunctionLibrary::FilterTextForProfanity(const FText& InText, FText& OutText) {
     return false;
 }

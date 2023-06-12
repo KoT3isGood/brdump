@@ -47,6 +47,9 @@ public:
     static FText GetAmmoTypeDisplayText(EAmmoType InAmmoType);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    static bool FilterTextForURLs(const FText& InText, FText& OutText);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool FilterTextForProfanity(const FText& InText, FText& OutText);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
