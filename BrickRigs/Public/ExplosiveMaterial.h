@@ -6,6 +6,7 @@
 #include "ExplosiveMaterial.generated.h"
 
 class AExplosion;
+class UDamageType;
 class UParticleSystem;
 class USoundBase;
 
@@ -32,7 +33,7 @@ public:
     float DamageScale;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float IgnitionRatio;
+    TSubclassOf<UDamageType> DamageType;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bIsFuel: 1;

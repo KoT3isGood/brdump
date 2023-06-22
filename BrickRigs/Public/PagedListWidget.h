@@ -37,17 +37,11 @@ protected:
     UPropertiesPanelWidget* PropertiesPanel;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    UPropertiesPanelWidget* DetailsPropertiesPanel;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UPagedListHeaderWidget* SelectedEntryHeaderWidget;
     
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UPagedListEntryWidget> EntryWidgetClass;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float EntrySpacing;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 NumEntriesPerRow;
@@ -95,6 +89,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetCurrentPage() const;
+    
+    UFUNCTION(BlueprintCallable)
+    bool ClearSelectedEntryWidget();
     
 };
 

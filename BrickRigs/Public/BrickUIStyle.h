@@ -3,6 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=AIModule -ObjectName=ETeamAttitude -FallbackName=ETeamAttitude
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=LinearColor -FallbackName=LinearColor
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=Margin -FallbackName=Margin
 //CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=SlateBrush -FallbackName=SlateBrush
 //CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=TextBlockStyle -FallbackName=TextBlockStyle
 #include "BrickUIBrushStyle.h"
@@ -11,6 +12,8 @@
 #include "EBrickUIBrushStyle.h"
 #include "EBrickUIColorStyle.h"
 #include "EBrickUIIconAtlas.h"
+#include "EBrickUIPaddingStyle.h"
+#include "EBrickUISpacingStyle.h"
 #include "EBrickUIStyleState.h"
 #include "EBrickUITextStyle.h"
 #include "ObjectPropertyItemInterface.h"
@@ -30,16 +33,22 @@ public:
     float ThrobberRotationSpeed;
     
     UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
-    FBrickUIBrushStyle BrushStyles[6];
+    FBrickUIIconAtlas IconAtlas[15];
     
     UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
-    FBrickUIColorStyle ColorStyles[7];
+    FBrickUIBrushStyle BrushStyles[8];
+    
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
+    FBrickUIColorStyle ColorStyles[5];
     
     UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FTextBlockStyle TextStyles[9];
     
     UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
-    FBrickUIIconAtlas IconAtlas[15];
+    float SpacingStyles[3];
+    
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
+    FMargin PaddingStyles[7];
     
     UBrickUIStyle();
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -48,6 +57,12 @@ public:
 protected:
     UFUNCTION(BlueprintCallable)
     void SetTextStyle(EBrickUITextStyle TextStyle, const FTextBlockStyle& InTextStyle);
+    
+    UFUNCTION(BlueprintCallable)
+    void SetSpacingStyle(EBrickUISpacingStyle SpacingStyle, float InSpacing);
+    
+    UFUNCTION(BlueprintCallable)
+    void SetPaddingStyle(EBrickUIPaddingStyle PaddingStyle, FMargin InPadding);
     
     UFUNCTION(BlueprintCallable)
     void SetIconAtlas(EBrickUIIconAtlas InIconAtlas, FBrickUIIconAtlas InAtlas);
@@ -72,6 +87,12 @@ public:
     static EBrickUIColorStyle GetTeamAttitudeColorStyle(TEnumAsByte<ETeamAttitude::Type> TeamAttitude);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    float GetSpacing(EBrickUISpacingStyle SpacingStyle, float Fallback) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    FMargin GetPadding(EBrickUIPaddingStyle PaddingStyle, const FMargin& Fallback) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FLinearColor GetColor(EBrickUIColorStyle ColorStyle, EBrickUIStyleState StyleState, const FLinearColor& Fallback) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -81,7 +102,7 @@ public:
     static FText FormatRichTextStyle(EBrickUITextStyle Style, const FText& InText);
     
 protected:
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BuildStyle();
     
     

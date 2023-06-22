@@ -22,7 +22,6 @@ UBrickEditorWidget::UBrickEditorWidget() : UUserWidget(FObjectInitializer::Get()
     this->PropertiesPanel = NULL;
     this->PlacableWidgetClass = NULL;
     this->NumPlacablesPerRow = 3;
-    this->PlacableSpacing = 15.00f;
     this->MoveModeWidgetClass = NULL;
     this->MirrorModeWidgetClass = NULL;
 }

@@ -9,12 +9,20 @@ class BRICKRIGS_API UChatMessageWidget : public UUserWidget {
     GENERATED_BODY()
 public:
     UChatMessageWidget();
-protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void UpdateMessageText(const FText& NewText);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void UpdateColorStyle(EBrickUIColorStyle NewColorStyle);
+    
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    void UpdateCanKickPlayer(bool bNewCanKick);
+    
+    UFUNCTION(BlueprintCallable)
+    void KickPlayer();
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool CanKickPlayer() const;
     
 };
 

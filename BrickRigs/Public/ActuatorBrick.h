@@ -13,7 +13,7 @@ class BRICKRIGS_API UActuatorBrick : public UBrick {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_RepActuatorState, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, Transient, meta=(AllowPrivateAccess=true))
     FActuatorState RepActuatorState;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
@@ -40,9 +40,6 @@ public:
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
 private:
-    UFUNCTION(BlueprintCallable)
-    void OnRep_RepActuatorState();
-    
     UFUNCTION(BlueprintCallable)
     void Interact_Actuate(ABrickPlayerController* OtherPC, float Val);
     

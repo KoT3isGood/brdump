@@ -20,6 +20,9 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EPopupSizeRule PopupSizeRule;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FName CloseActionName;
+    
 public:
     UPopupWidget();
     UFUNCTION(BlueprintCallable)

@@ -45,5 +45,8 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetColorStyle(EBrickUIColorStyle NewStyle);
     
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsLoadingImage() const;
+    
 };
 

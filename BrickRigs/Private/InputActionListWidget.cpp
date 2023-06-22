@@ -5,6 +5,7 @@ UWidget* UInputActionListWidget::GetWidgetToFocus_Implementation() const {
     return NULL;
 }
 
+
 void UInputActionListWidget::AddCategoryWidget_Implementation(UInputActionCategoryWidget* Widget, int32 CategoryIndex) {
 }
 
@@ -15,7 +16,7 @@ UInputActionListWidget::UInputActionListWidget() : UUserWidget(FObjectInitialize
     this->MainGridPanel = NULL;
     this->CategoryWidgetClass = NULL;
     this->ActionWidgetClass = NULL;
-    this->ActionPadding = 15.00f;
     this->InputActionListMode = EInputActionListMode::InputHelpClosed;
+    this->QuickAccessDisplayTime = 4.00f;
 }
 

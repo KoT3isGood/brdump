@@ -70,12 +70,6 @@ protected:
     void OnReleasedOpenVehicle();
     
     UFUNCTION(BlueprintCallable)
-    void OnReleasedMap();
-    
-    UFUNCTION(BlueprintCallable)
-    void OnReleasedInventory();
-    
-    UFUNCTION(BlueprintCallable)
     void OnReleasedFreeCamera();
     
     UFUNCTION(BlueprintCallable)

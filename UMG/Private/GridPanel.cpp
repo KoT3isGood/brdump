@@ -1,5 +1,8 @@
 #include "GridPanel.h"
 
+void UGridPanel::SetSlotSpacing(const FVector2D& Spacing) {
+}
+
 void UGridPanel::SetRowFill(int32 ColumnIndex, float Coefficient) {
 }
 

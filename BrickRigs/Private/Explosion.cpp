@@ -6,6 +6,7 @@ void AExplosion::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifeti
     
     DOREPLIFETIME(AExplosion, ExplosiveMaterial);
     DOREPLIFETIME(AExplosion, ExplosiveVolume);
+    DOREPLIFETIME(AExplosion, ComponentsToIgnore);
 }
 
 AExplosion::AExplosion() {

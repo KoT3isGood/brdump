@@ -12,7 +12,6 @@
 #include "ControlHintWidget.generated.h"
 
 class UBrickImage;
-class UBrickProgressBar;
 class UBrickTextBlock;
 class UInputChordWidget;
 class UScaleBox;
@@ -33,9 +32,6 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UBrickImage* IconImage;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    UBrickProgressBar* HoldProgressBar;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName ActionName;
@@ -79,7 +75,7 @@ protected:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void UpdateTextVisibility(bool bNewVisible);
     
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void UpdateIsHoldAction(bool bIsHoldAction);
     
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
@@ -91,7 +87,7 @@ protected:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void UpdateIconVisibility(bool bNewVisible);
     
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void UpdateHoldProgress(float InHoldProgress);
     
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)

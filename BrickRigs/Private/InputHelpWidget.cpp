@@ -1,22 +1,11 @@
 #include "InputHelpWidget.h"
 
-void UInputHelpWidget::ToggleInputHelpOpen() {
-}
-
-void UInputHelpWidget::OpenInputHelp() {
-}
-
-
-
-void UInputHelpWidget::OnFadedOut() {
-}
-
 UWidget* UInputHelpWidget::GetWidgetToFocus_Implementation() const {
     return NULL;
 }
 
-bool UInputHelpWidget::CloseInputHelp() {
-    return false;
+UGameOverlayWidget* UInputHelpWidget::GetGameOverlay() const {
+    return NULL;
 }
 
 UInputHelpWidget::UInputHelpWidget() : UUserWidget(FObjectInitializer::Get()) {

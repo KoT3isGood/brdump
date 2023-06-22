@@ -19,10 +19,6 @@ FText UUIFunctionLibrary::GetHUDVisibilityDisplayText(EHUDVisibility InHUDVisibi
     return FText::GetEmpty();
 }
 
-UWidget* UUIFunctionLibrary::GetFirstFocusableChildWidget(UWidget* Widget) {
-    return NULL;
-}
-
 FText UUIFunctionLibrary::GetFireModeDisplayText(EFireMode InFireMode) {
     return FText::GetEmpty();
 }

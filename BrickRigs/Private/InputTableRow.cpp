@@ -5,7 +5,7 @@ FInputTableRow::FInputTableRow() {
     this->Type = EInputRowType::PressAction;
     this->InputMenuCategory = NULL;
     this->InputContextCategory = NULL;
-    this->bQuickAccess = false;
+    this->bShowInQuickAccess = false;
     this->bConsumeInput = false;
 }
 

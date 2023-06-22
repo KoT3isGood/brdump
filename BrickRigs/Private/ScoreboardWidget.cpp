@@ -5,7 +5,6 @@ UScoreboardWidget::UScoreboardWidget() : UUserWidget(FObjectInitializer::Get()) 
     this->TeamWidgetClass = NULL;
     this->PlayerWidgetClass = NULL;
     this->NumTeamsPerRow = 3;
-    this->TeamSpacing = 15.00f;
     this->bCanJoinTeams = false;
 }
 

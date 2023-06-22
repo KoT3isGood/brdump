@@ -9,8 +9,6 @@
 #include "ENumericValueType.h"
 #include "UIFunctionLibrary.generated.h"
 
-class UWidget;
-
 UCLASS(Blueprintable)
 class BRICKRIGS_API UUIFunctionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
@@ -30,9 +28,6 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FText GetHUDVisibilityDisplayText(EHUDVisibility InHUDVisibility);
-    
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    static UWidget* GetFirstFocusableChildWidget(UWidget* Widget);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FText GetFireModeDisplayText(EFireMode InFireMode);

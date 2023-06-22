@@ -8,6 +8,7 @@ class UAudioComponent;
 class UCameraShakeBase;
 class UExplosiveMaterial;
 class UParticleSystemComponent;
+class UPrimitiveComponent;
 
 UCLASS(Abstract, Blueprintable)
 class BRICKRIGS_API AExplosion : public AActor {
@@ -19,6 +20,9 @@ private:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, Transient, meta=(AllowPrivateAccess=true))
     float ExplosiveVolume;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Replicated, Transient, meta=(AllowPrivateAccess=true))
+    TArray<UPrimitiveComponent*> ComponentsToIgnore;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     AActor* DamageCauser;

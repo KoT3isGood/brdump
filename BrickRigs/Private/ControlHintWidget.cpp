@@ -3,8 +3,6 @@
 void UControlHintWidget::UpdateTextVisibility_Implementation(bool bNewVisible) {
 }
 
-void UControlHintWidget::UpdateIsHoldAction_Implementation(bool bIsHoldAction) {
-}
 
 void UControlHintWidget::UpdateInputChordVisibility_Implementation(bool bNewVisible) {
 }
@@ -15,8 +13,6 @@ void UControlHintWidget::UpdateInputChordStyleState_Implementation(EBrickUIStyle
 void UControlHintWidget::UpdateIconVisibility_Implementation(bool bNewVisible) {
 }
 
-void UControlHintWidget::UpdateHoldProgress_Implementation(float InHoldProgress) {
-}
 
 void UControlHintWidget::UpdateDisplayInfo_Implementation(const FDisplayInfo& NewDisplayInfo) {
 }
@@ -56,7 +52,6 @@ UControlHintWidget::UControlHintWidget() : UUserWidget(FObjectInitializer::Get()
     this->InputChordWidget = NULL;
     this->TextBlock = NULL;
     this->IconImage = NULL;
-    this->HoldProgressBar = NULL;
     this->TriggerType = EInputActionTriggerType::Press;
     this->bShowUnboundKey = true;
     this->bShowInputChord = true;

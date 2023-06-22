@@ -9,8 +9,6 @@ UPlayerControllerStaticInfo::UPlayerControllerStaticInfo() {
     this->DeathSoundMix = NULL;
     this->NoAtmosphereSoundMix = NULL;
     this->HurtSound = NULL;
-    this->NotificationSound = NULL;
-    this->CriticalNotificationSound = NULL;
     this->VehicleEditorClass = NULL;
     this->EditorEntryGarageInflation = 500.00f;
 }

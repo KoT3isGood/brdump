@@ -6,6 +6,7 @@
 #include "Templates/SubclassOf.h"
 #include "BrickComboBoxWidget.generated.h"
 
+class UBrickButtonWidget;
 class UBrickComboBoxItemContainerWidget;
 class UBrickComboBoxItemWidget;
 class UBrickComboBoxMenuWidget;
@@ -33,6 +34,9 @@ protected:
     UBrickComboBoxMenuWidget* MenuWidget;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UBrickButtonWidget* Button;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UGridPanel* ItemsPanel;
     
 public:
@@ -50,9 +54,6 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 MaxItemsPerRow;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float ItemPadding;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnInitializeItem OnInitializeItemDelegate;

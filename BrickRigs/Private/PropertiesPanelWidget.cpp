@@ -3,14 +3,10 @@
 void UPropertiesPanelWidget::UpdateProperties() {
 }
 
-bool UPropertiesPanelWidget::InitUserFocus() {
-    return false;
-}
-
 void UPropertiesPanelWidget::ClearProperties() {
 }
 
-void UPropertiesPanelWidget::AddProperties(const TArray<UObject*>& InContainers, const FGameplayTagContainer& InCategories, bool bSearchProperties) {
+void UPropertiesPanelWidget::AddProperties(const TArray<UObject*>& InContainers, const FBrickPropertyReflectionFilter& InFilter) {
 }
 
 
@@ -18,5 +14,6 @@ UPropertiesPanelWidget::UPropertiesPanelWidget() : UUserWidget(FObjectInitialize
     this->CategoryWidgetClass = NULL;
     this->ContainerWidgetClass = NULL;
     this->NumPropertiesPerRow = 1;
+    this->Orientation = Orient_Horizontal;
 }
 

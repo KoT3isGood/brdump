@@ -18,6 +18,10 @@ void UBrickImage::SetIconAtlas(EBrickUIIconAtlas NewAtlas) {
 void UBrickImage::SetColorStyle(EBrickUIColorStyle NewStyle) {
 }
 
+bool UBrickImage::IsLoadingImage() const {
+    return false;
+}
+
 UBrickImage::UBrickImage() {
     this->ColorStyle = EBrickUIColorStyle::Default;
     this->StyleState = EBrickUIStyleState::Foreground;

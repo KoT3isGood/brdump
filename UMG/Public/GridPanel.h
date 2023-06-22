@@ -26,7 +26,13 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FVector2D CellSizeOverride;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FVector2D SlotSpacing;
+    
     UGridPanel();
+    UFUNCTION(BlueprintCallable)
+    void SetSlotSpacing(const FVector2D& Spacing);
+    
     UFUNCTION(BlueprintCallable)
     void SetRowFill(int32 ColumnIndex, float Coefficient);
     

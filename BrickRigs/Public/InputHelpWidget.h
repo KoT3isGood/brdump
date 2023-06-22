@@ -3,6 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=UMG -ObjectName=UserWidget -FallbackName=UserWidget
 #include "InputHelpWidget.generated.h"
 
+class UGameOverlayWidget;
 class UInputActionListWidget;
 class UWidget;
 
@@ -16,28 +17,13 @@ protected:
     
 public:
     UInputHelpWidget();
-    UFUNCTION(BlueprintCallable)
-    void ToggleInputHelpOpen();
-    
-    UFUNCTION(BlueprintCallable)
-    void OpenInputHelp();
-    
 protected:
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void OnFadeOut();
-    
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void OnFadeIn();
-    
-    UFUNCTION(BlueprintCallable)
-    void OnFadedOut();
-    
-public:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     UWidget* GetWidgetToFocus() const;
     
-    UFUNCTION(BlueprintCallable)
-    bool CloseInputHelp();
+public:
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UGameOverlayWidget* GetGameOverlay() const;
     
 };
 

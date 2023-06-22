@@ -14,6 +14,10 @@
 
 
 
+bool UGameOverlayWidget::ToggleInputHelpOpen(bool bUpdateFocus) {
+    return false;
+}
+
 void UGameOverlayWidget::OnHUDVisibilityChanged(EHUDVisibility NewVisibility) {
 }
 
@@ -32,7 +36,7 @@ UGameOverlayWidget::UGameOverlayWidget() : UUserWidget(FObjectInitializer::Get()
     this->MatchTimerWidget = NULL;
     this->MatchStateWidget = NULL;
     this->SpectatorPawn = NULL;
-    this->ViewedVehicle = NULL;
+    this->ViewedCharacter = NULL;
     this->BrickEditor = NULL;
     this->HighPingIndicator = NULL;
     this->InputHelpClass = NULL;

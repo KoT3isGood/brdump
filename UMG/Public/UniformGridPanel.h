@@ -1,5 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
 //CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=Margin -FallbackName=Margin
 #include "PanelWidget.h"
 #include "UniformGridPanel.generated.h"
@@ -15,12 +16,18 @@ public:
     FMargin SlotPadding;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FVector2D SlotSpacing;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float MinDesiredSlotWidth;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float MinDesiredSlotHeight;
     
     UUniformGridPanel();
+    UFUNCTION(BlueprintCallable)
+    void SetSlotSpacing(FVector2D InSlotSpacing);
+    
     UFUNCTION(BlueprintCallable)
     void SetSlotPadding(FMargin InSlotPadding);
     

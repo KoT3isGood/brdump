@@ -17,9 +17,9 @@ UMapWidget::UMapWidget() {
     this->ButtonPanel = NULL;
     this->ScaleTextBlock = NULL;
     this->MinViewportSize = 10000.00f;
-    this->ZoomCurvePower = 2.00f;
-    this->ZoomSpeed = 0.50f;
-    this->WheelZoomStep = 0.10f;
+    this->PanSpeed = 1.00f;
+    this->ZoomSpeed = 4.00f;
+    this->ZoomStep = 25000.00f;
     this->ViewportInterpSpeed = 8.00f;
     this->MapResolutionScale = 0.25f;
     this->MapRenderInterval = 0.50f;

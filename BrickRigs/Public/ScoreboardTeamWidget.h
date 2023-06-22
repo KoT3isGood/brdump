@@ -34,9 +34,6 @@ protected:
     int32 NumPlayersPerRow;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float PlayerSpacing;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float SortPlayersDelay;
     
 public:

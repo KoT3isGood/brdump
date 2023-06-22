@@ -249,10 +249,10 @@ void UGameUserSettings::ApplyHardwareBenchmarkResults() {
 UGameUserSettings::UGameUserSettings() {
     this->bUseVSync = false;
     this->bUseDynamicResolution = false;
-    this->ResolutionSizeX = 3200;
-    this->ResolutionSizeY = 1800;
-    this->LastUserConfirmedResolutionSizeX = 3200;
-    this->LastUserConfirmedResolutionSizeY = 1800;
+    this->ResolutionSizeX = 1920;
+    this->ResolutionSizeY = 1080;
+    this->LastUserConfirmedResolutionSizeX = 1920;
+    this->LastUserConfirmedResolutionSizeY = 1080;
     this->WindowPosX = -1;
     this->WindowPosY = -1;
     this->FullscreenMode = 1;

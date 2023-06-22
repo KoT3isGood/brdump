@@ -7,9 +7,6 @@ void UAdminMenuWidget::UpdateIsAdmin_Implementation(bool bNewIsAdmin) {
 void UAdminMenuWidget::ShowPlayerProfile() {
 }
 
-void UAdminMenuWidget::RevokeKick() {
-}
-
 void UAdminMenuWidget::RefreshPlayerList() {
 }
 

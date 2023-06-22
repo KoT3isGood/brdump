@@ -17,9 +17,6 @@ public:
     UPlayerInputComponent();
 protected:
     UFUNCTION(BlueprintCallable)
-    void OnReleasedScoreboard();
-    
-    UFUNCTION(BlueprintCallable)
     void OnReleasedMoveCamera();
     
     UFUNCTION(BlueprintCallable)

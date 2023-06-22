@@ -1,5 +1,8 @@
 #include "UniformGridPanel.h"
 
+void UUniformGridPanel::SetSlotSpacing(FVector2D InSlotSpacing) {
+}
+
 void UUniformGridPanel::SetSlotPadding(FMargin InSlotPadding) {
 }
 

@@ -3,6 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=UMG -ObjectName=Border -FallbackName=Border
 #include "EBrickUIBrushStyle.h"
 #include "EBrickUIColorStyle.h"
+#include "EBrickUIPaddingStyle.h"
 #include "EBrickUIStyleState.h"
 #include "BrickBorder.generated.h"
 
@@ -10,7 +11,7 @@ UCLASS(Blueprintable)
 class BRICKRIGS_API UBrickBorder : public UBorder {
     GENERATED_BODY()
 public:
-private:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EBrickUIBrushStyle BrushStyle;
     
@@ -20,10 +21,16 @@ private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EBrickUIStyleState StyleState;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    EBrickUIPaddingStyle PaddingStyle;
+    
 public:
     UBrickBorder();
     UFUNCTION(BlueprintCallable)
     void SetStyleState(EBrickUIStyleState NewState);
+    
+    UFUNCTION(BlueprintCallable)
+    void SetPaddingStyle(EBrickUIPaddingStyle NewStyle);
     
     UFUNCTION(BlueprintCallable)
     void SetColorStyle(EBrickUIColorStyle NewStyle);

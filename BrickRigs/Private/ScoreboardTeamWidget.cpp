@@ -12,7 +12,6 @@ UScoreboardTeamWidget::UScoreboardTeamWidget() : UUserWidget(FObjectInitializer:
     this->ScoreTextBlock = NULL;
     this->PlayersPanel = NULL;
     this->NumPlayersPerRow = 1;
-    this->PlayerSpacing = 15.00f;
     this->SortPlayersDelay = 1.00f;
 }
 

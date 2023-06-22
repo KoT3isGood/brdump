@@ -25,15 +25,17 @@ int32 UPagedListWidget::GetCurrentPage() const {
     return 0;
 }
 
+bool UPagedListWidget::ClearSelectedEntryWidget() {
+    return false;
+}
+
 UPagedListWidget::UPagedListWidget() : UUserWidget(FObjectInitializer::Get()) {
     this->ScrollBox = NULL;
     this->PageSelector = NULL;
     this->EntriesPanel = NULL;
     this->PropertiesPanel = NULL;
-    this->DetailsPropertiesPanel = NULL;
     this->SelectedEntryHeaderWidget = NULL;
     this->EntryWidgetClass = NULL;
-    this->EntrySpacing = 15.00f;
     this->NumEntriesPerRow = 1;
     this->NumEntriesPerPage = 30;
     this->bUseAbsoluteEntryIndices = false;

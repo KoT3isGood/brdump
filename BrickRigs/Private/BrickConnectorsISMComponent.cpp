@@ -5,8 +5,8 @@ void UBrickConnectorsISMComponent::SetStyle(EBrickUIColorStyle NewColorStyle, EB
 
 UBrickConnectorsISMComponent::UBrickConnectorsISMComponent() {
     this->Mid = NULL;
-    this->ColorStyle = EBrickUIColorStyle::Default;
-    this->FocusedColorStyle = EBrickUIColorStyle::EditorActive;
+    this->ColorStyle = EBrickUIColorStyle::Neutral;
+    this->FocusedColorStyle = EBrickUIColorStyle::Highlight;
     this->StyleState = EBrickUIStyleState::Button;
     this->FocusedStyleState = EBrickUIStyleState::Button;
 }

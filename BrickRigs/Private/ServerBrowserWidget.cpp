@@ -16,8 +16,8 @@ void UServerBrowserWidget::JoinServer() {
 
 UServerBrowserWidget::UServerBrowserWidget() {
     this->PagedList = NULL;
+    this->SearchSessionType = ESearchSessionType::Lobby;
     this->ServerSortMethod = EServerSortMethod::Name;
     this->bSearchPrivateServers = true;
-    this->bSearchIncompatibleBuilds = true;
 }
 

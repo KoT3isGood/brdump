@@ -18,10 +18,7 @@ protected:
     UPagedListWidget* PagedList;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSoftClassPtr<UPopupWidget> EditKickPopupClass;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSoftClassPtr<UPopupWidget> RevokeKickPopupClass;
+    TSoftClassPtr<UPopupWidget> KickPopupClass;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     EKickedPlayerSortMethod KickedPlayerSortMethod;
@@ -40,9 +37,6 @@ protected:
     
     UFUNCTION(BlueprintCallable)
     void ShowPlayerProfile();
-    
-    UFUNCTION(BlueprintCallable)
-    void RevokeKick();
     
     UFUNCTION(BlueprintCallable)
     void RefreshPlayerList();

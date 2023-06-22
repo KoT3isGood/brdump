@@ -1,5 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=EOrientation -FallbackName=EOrientation
 #include "BrickUserWidget.h"
 #include "PropertyContainerWidget.generated.h"
 
@@ -23,7 +24,10 @@ public:
     UPropertyContainerWidget();
 protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void UpdatePropertyDepth(int32 Depth);
+    void UpdateOrientation(TEnumAsByte<EOrientation> InOrientation);
+    
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    void UpdateIsReadOnly(bool bInReadOnly);
     
     UFUNCTION(BlueprintCallable)
     bool OpenContextMenu();
@@ -34,7 +38,7 @@ public:
     
 protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void AddPropertyWidget(UPropertyWidget* Widget);
+    void AddPropertyWidget(UPropertyWidget* Widget, TEnumAsByte<EOrientation> InOrientation);
     
 };
 

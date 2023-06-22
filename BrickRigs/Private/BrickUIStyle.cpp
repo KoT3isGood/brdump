@@ -7,6 +7,12 @@ EBrickUIStyleState UBrickUIStyle::SwitchButtonStyleState(EBrickUIStyleState Styl
 void UBrickUIStyle::SetTextStyle(EBrickUITextStyle TextStyle, const FTextBlockStyle& InTextStyle) {
 }
 
+void UBrickUIStyle::SetSpacingStyle(EBrickUISpacingStyle SpacingStyle, float InSpacing) {
+}
+
+void UBrickUIStyle::SetPaddingStyle(EBrickUIPaddingStyle PaddingStyle, FMargin InPadding) {
+}
+
 void UBrickUIStyle::SetIconAtlas(EBrickUIIconAtlas InIconAtlas, FBrickUIIconAtlas InAtlas) {
 }
 
@@ -32,6 +38,14 @@ EBrickUIColorStyle UBrickUIStyle::GetTeamAttitudeColorStyle(TEnumAsByte<ETeamAtt
     return EBrickUIColorStyle::Default;
 }
 
+float UBrickUIStyle::GetSpacing(EBrickUISpacingStyle SpacingStyle, float Fallback) const {
+    return 0.0f;
+}
+
+FMargin UBrickUIStyle::GetPadding(EBrickUIPaddingStyle PaddingStyle, const FMargin& Fallback) const {
+    return FMargin{};
+}
+
 FLinearColor UBrickUIStyle::GetColor(EBrickUIColorStyle ColorStyle, EBrickUIStyleState StyleState, const FLinearColor& Fallback) const {
     return FLinearColor{};
 }
@@ -44,10 +58,11 @@ FText UBrickUIStyle::FormatRichTextStyle(EBrickUITextStyle Style, const FText& I
     return FText::GetEmpty();
 }
 
-void UBrickUIStyle::BuildStyle_Implementation() {
-}
 
 UBrickUIStyle::UBrickUIStyle() {
     this->ThrobberRotationSpeed = 360.00f;
+    this->SpacingStyles[0] = 0.00f;
+    this->SpacingStyles[1] = 0.00f;
+    this->SpacingStyles[2] = 0.00f;
 }
 

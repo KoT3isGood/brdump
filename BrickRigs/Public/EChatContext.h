@@ -7,7 +7,6 @@ enum class EChatContext : uint8 {
     None,
     Global,
     Team,
-    Local,
     Admin,
     Max,
 };

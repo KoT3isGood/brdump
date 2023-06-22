@@ -1,7 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayTags -ObjectName=GameplayTagContainer -FallbackName=GameplayTagContainer
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=EOrientation -FallbackName=EOrientation
 //CROSS-MODULE INCLUDE V2: -ModuleName=UMG -ObjectName=UserWidget -FallbackName=UserWidget
+#include "BrickPropertyReflectionFilter.h"
 #include "Templates/SubclassOf.h"
 #include "PropertiesPanelWidget.generated.h"
 
@@ -34,19 +35,19 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 NumPropertiesPerRow;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TEnumAsByte<EOrientation> Orientation;
+    
 public:
     UPropertiesPanelWidget();
     UFUNCTION(BlueprintCallable)
     void UpdateProperties();
     
     UFUNCTION(BlueprintCallable)
-    bool InitUserFocus();
-    
-    UFUNCTION(BlueprintCallable)
     void ClearProperties();
     
     UFUNCTION(BlueprintCallable)
-    void AddProperties(const TArray<UObject*>& InContainers, const FGameplayTagContainer& InCategories, bool bSearchProperties);
+    void AddProperties(const TArray<UObject*>& InContainers, const FBrickPropertyReflectionFilter& InFilter);
     
 protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)

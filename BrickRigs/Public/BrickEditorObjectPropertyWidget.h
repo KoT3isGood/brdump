@@ -10,9 +10,12 @@ public:
     UBrickEditorObjectPropertyWidget();
 protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void UpdateSelectedObjects(const FText& FirstObjectName, int32 NumSelectedObjects);
+    void UpdateSelectedObjects(const FText& FirstObjectName, int32 NumSelectedObjects, bool bDefaultObjects);
     
 public:
+    UFUNCTION(BlueprintCallable)
+    void SelectObjects();
+    
     UFUNCTION(BlueprintCallable)
     void OpenObjectPicker();
     

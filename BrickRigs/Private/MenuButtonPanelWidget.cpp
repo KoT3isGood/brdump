@@ -21,6 +21,5 @@ UMenuButtonPanelWidget::UMenuButtonPanelWidget() : UUserWidget(FObjectInitialize
     this->ButtonPanel = NULL;
     this->ButtonClass = NULL;
     this->NumButtonsPerRow = 0;
-    this->ButtonSpacing = 15.00f;
 }
 

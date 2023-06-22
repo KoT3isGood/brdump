@@ -3,7 +3,7 @@
 UGeneralProjectSettings::UGeneralProjectSettings() {
     this->CopyrightNotice = TEXT("Copyright Fluppisoft, 2022");
     this->ProjectName = TEXT("BrickRigs");
-    this->ProjectVersion = TEXT("1.4.5");
+    this->ProjectVersion = TEXT("1.5.0");
     this->bShouldWindowPreserveAspectRatio = true;
     this->bUseBorderlessWindow = false;
     this->bStartInVR = false;

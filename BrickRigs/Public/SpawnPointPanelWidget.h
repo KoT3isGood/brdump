@@ -16,9 +16,6 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 NumSpawnPointsPerRow;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float SpawnPointSpacing;
-    
 public:
     USpawnPointPanelWidget();
 };

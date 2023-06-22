@@ -23,6 +23,8 @@ UBrickEditorStaticInfo::UBrickEditorStaticInfo() {
     this->ConnectorsISMComponentClass = UBrickConnectorsISMComponent::StaticClass();
     this->PointLightFrustumMesh = NULL;
     this->SpotLightFrustumMesh = NULL;
+    this->InputChannelMesh = NULL;
+    this->HiddenObjectMaterial = NULL;
     this->FluidDynamicsVisualizationMaterial = NULL;
 }
 

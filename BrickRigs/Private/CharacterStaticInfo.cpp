@@ -7,6 +7,7 @@ UCharacterStaticInfo::UCharacterStaticInfo() {
     this->MaxHealth = 1.00f;
     this->MinDamage = 0.00f;
     this->RadialDamageScale = 0.10f;
+    this->CollisionDamageScale = 0.10f;
     this->AutoHealTime = 30.00f;
     this->AutoHealDelay = 10.00f;
     this->BoneDamageGroups.AddDefaulted(1);

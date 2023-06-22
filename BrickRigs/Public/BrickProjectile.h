@@ -9,6 +9,7 @@
 
 class APawn;
 class UBrickProjectileMovementComponent;
+class UDamageType;
 class UExplosiveMaterial;
 class UFirearmComponent;
 class UParticleSystem;
@@ -70,6 +71,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FViewTargetZoomParams ZoomParams;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSubclassOf<UDamageType> DamageType;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UExplosiveMaterial> ExplosiveMaterial;

@@ -8,9 +8,6 @@ UBrickUserSettings::UBrickUserSettings() {
     this->HoldKeyTime = 0.30f;
     this->MouseTapTime = 0.10f;
     this->HostServerType = EHostServerType::Private;
-    this->bApplyMatchSettings = true;
-    this->bFadeMatchSettings = true;
-    this->GamepadCursorSpeed = 1.00f;
     this->hudvisibility = EHUDVisibility::Full;
     this->MeasurementSystem = EMeasurementSystem::Metric;
     this->ChatContext = EChatContext::Global;
@@ -37,11 +34,11 @@ UBrickUserSettings::UBrickUserSettings() {
     this->EditorGridSnappingAngle = 15.00f;
     this->EditorBrickSnappingDistance = 10.00f;
     this->EditorBrickSnappingAngle = 5.00f;
-    this->bEditorSnappingEnabled = false;
+    this->bEditorSnappingEnabled = true;
     this->bEditorGizmoWorldSpace = false;
     this->EditorZoomRatio = 0.00f;
-    this->EditorCameraSpeedRatio = 0.15f;
-    this->FreeCamSpeedRatio = 0.80f;
+    this->EditorCameraSpeedRatio = 0.25f;
+    this->FreeCamSpeedRatio = 0.88f;
     this->FreeCamShiftSpeedRatio = 1.00f;
     this->ProjectileCamZoomRatio = 0.25f;
 }

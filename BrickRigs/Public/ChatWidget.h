@@ -33,33 +33,23 @@ protected:
     float FadeOutDelay;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float ChatMessageSpacing;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UChatMessageWidget> ChatMessageWidgetClass;
     
 public:
     UChatWidget();
 protected:
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void UpdateTextBoxFocused(bool bNewFocused);
-    
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void UpdateScrollBoxVisibility(bool bNewVisible);
+    
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    void UpdateIsTyping(bool bNewTyping);
+    
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    void UpdateIsFocused(bool bNewFocused);
     
 private:
     UFUNCTION(BlueprintCallable)
     void OnTextChanged(const FText& Text, EValueChangedEventType EventType);
-    
-protected:
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void OnFadeOut();
-    
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void OnFadeIn();
-    
-    UFUNCTION(BlueprintCallable)
-    void OnFadedOut();
     
 public:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)

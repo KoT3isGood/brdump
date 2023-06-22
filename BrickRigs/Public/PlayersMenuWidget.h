@@ -3,7 +3,6 @@
 #include "MenuPageWidget.h"
 #include "PlayersMenuWidget.generated.h"
 
-class UPopupWidget;
 class UScoreboardWidget;
 
 UCLASS(Abstract, Blueprintable, EditInlineNew)
@@ -13,9 +12,6 @@ public:
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UScoreboardWidget* Scoreboard;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSoftClassPtr<UPopupWidget> KickPlayerPopupClass;
     
 public:
     UPlayersMenuWidget();

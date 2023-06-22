@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=AIModule -ObjectName=ETeamAttitude -FallbackName=ETeamAttitude
 //CROSS-MODULE INCLUDE V2: -ModuleName=AIModule -ObjectName=GenericTeamAgentInterface -FallbackName=GenericTeamAgentInterface
 //CROSS-MODULE INCLUDE V2: -ModuleName=AIModule -ObjectName=GenericTeamId -FallbackName=GenericTeamId
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=UniqueNetIdRepl -FallbackName=UniqueNetIdRepl
 #include "BasePlayerController.h"
+#include "BrickChatMessage.h"
 #include "BrickDuration.h"
 #include "ClientDamageInfo.h"
 #include "EChatContext.h"
@@ -28,7 +28,6 @@
 class AActor;
 class ABaseCharacter;
 class ABrickEditor;
-class ABrickPlayerState;
 class ABrickVehicle;
 class ADragStrip;
 class AElevator;
@@ -112,9 +111,6 @@ private:
     void ServerSetSwitchBrickValue(USwitchBrick* SwitchBrick, int8 NewValue);
     
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
-    void ServerSetNextMatchSetting(const FMatchSettings& NewSettings);
-    
-    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerSetElevatorDirection(AElevator* Elevator, EElevatorDirection Dir);
     
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
@@ -159,13 +155,16 @@ private:
     void ServerOnProjectileHit(const FProjectileHitInfo& HitInfo);
     
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
+    void ServerOnPlayerChangedMatchSettings(const FMatchSettings& NewSettings, bool bNextMatch);
+    
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerOnMeleeHit(const FRepHitInfo& HitInfo);
     
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerKillCharacter();
     
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
-    void ServerKickPlayer(ABrickPlayerState* OtherPlayerState, const FUniqueNetIdRepl& OtherPlayerId, const FString& KickReason, const FBrickDuration& KickDuration);
+    void ServerKickPlayer(const FUniqueNetIdRepl& OtherPlayerId, const FString& KickReason, const FBrickDuration& KickDuration);
     
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerJoinTeam(const FGenericTeamId& InTeamId);
@@ -198,9 +197,6 @@ public:
 private:
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerAttachWinchBrick(UWinchBrick* WinchBrick, const FWinchAttachTarget& AttachTarget);
-    
-    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
-    void ServerApplyMatchSettings(bool bFadeIn);
     
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerAccessInventory(UInventoryComponent* InInventory);
@@ -246,16 +242,10 @@ private:
     
 public:
     UFUNCTION(BlueprintCallable, Client, Reliable)
-    void ClientReceiveChatMessage(ABrickPlayerState* Sender, EChatContext Context, const FText& Message);
+    void ClientReceiveChatMessages(const TArray<FBrickChatMessage>& ChatMessages);
     
     UFUNCTION(BlueprintCallable, Client, Reliable)
-    void ClientOnPlayerLeft(const FString& PlayerName, TEnumAsByte<ETeamAttitude::Type> TeamAttitude, bool bWasKicked);
-    
-    UFUNCTION(BlueprintCallable, Client, Reliable)
-    void ClientOnPlayerJoined(const FString& PlayerName, TEnumAsByte<ETeamAttitude::Type> TeamAttitude);
-    
-    UFUNCTION(BlueprintCallable, Client, Reliable)
-    void ClientOnPlayerDied(ABrickPlayerState* Victim, ABrickPlayerState* Killer);
+    void ClientReceiveChatMessage(const FBrickChatMessage& ChatMessage);
     
     UFUNCTION(BlueprintCallable, Client, Reliable)
     void ClientOnFailedToRestart(EPlayerSpawnResult SpawnResult, const FVehicleSpawnProperties& Props);

@@ -60,12 +60,6 @@ void UPawnInputComponent::OnReleasedRecover() {
 void UPawnInputComponent::OnReleasedOpenVehicle() {
 }
 
-void UPawnInputComponent::OnReleasedMap() {
-}
-
-void UPawnInputComponent::OnReleasedInventory() {
-}
-
 void UPawnInputComponent::OnReleasedFreeCamera() {
 }
 

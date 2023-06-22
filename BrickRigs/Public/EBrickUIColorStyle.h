@@ -9,8 +9,6 @@ enum class EBrickUIColorStyle : uint8 {
     Positive,
     Negative,
     Neutral,
-    EditorSelected,
-    EditorActive,
     Custom,
     Max,
 };

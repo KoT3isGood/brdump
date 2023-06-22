@@ -8,8 +8,8 @@
 #include "Templates/SubclassOf.h"
 #include "GameOverlayWidget.generated.h"
 
+class ABaseCharacter;
 class ABrickEditor;
-class ABrickVehicle;
 class ASpectatorPawn;
 class UChatWidget;
 class UHUDNotificationWidget;
@@ -46,7 +46,7 @@ private:
     ASpectatorPawn* SpectatorPawn;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    ABrickVehicle* ViewedVehicle;
+    ABaseCharacter* ViewedCharacter;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     ABrickEditor* BrickEditor;
@@ -120,6 +120,10 @@ protected:
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void UpdateCameraModeNotification(UHUDNotificationWidget* Widget, ECameraMode NewMode);
+    
+public:
+    UFUNCTION(BlueprintCallable)
+    bool ToggleInputHelpOpen(bool bUpdateFocus);
     
 private:
     UFUNCTION(BlueprintCallable)

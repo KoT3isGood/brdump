@@ -8,6 +8,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=UMG -ObjectName=EventReply -FallbackName=EventReply
 #include "ButtonWidgetBase.h"
 #include "EBrickUIColorStyle.h"
+#include "EBrickUIPaddingStyle.h"
 #include "EBrickUIStyleState.h"
 #include "BrickButtonWidget.generated.h"
 
@@ -25,6 +26,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FMargin ContentPadding;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    EBrickUIPaddingStyle ContentPaddingStyle;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TEnumAsByte<EHorizontalAlignment> ContentHorizontalAlignment;
@@ -59,6 +63,9 @@ public:
     UBrickButtonWidget();
     UFUNCTION(BlueprintCallable)
     void SetContentVerticalAlignment(TEnumAsByte<EVerticalAlignment> InAlignment);
+    
+    UFUNCTION(BlueprintCallable)
+    void SetContentPaddingStyle(EBrickUIPaddingStyle InStyle);
     
     UFUNCTION(BlueprintCallable)
     void SetContentPadding(const FMargin& InPadding);

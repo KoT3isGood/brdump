@@ -8,7 +8,6 @@
 #include "BrickPawnInterface.h"
 #include "ContactModifyInterface.h"
 #include "EVehiclePinMode.h"
-#include "ExplosiveInterface.h"
 #include "FireInterface.h"
 #include "FuelLevel.h"
 #include "GenericTeamIdSet.h"
@@ -38,7 +37,7 @@ class UInventoryComponent;
 class UMotorBrick;
 
 UCLASS(Blueprintable)
-class BRICKRIGS_API ABrickVehicle : public APawn, public IBrickPawnInterface, public IViewTargetInterface, public IGenericTeamAgentInterface, public ISpawnPointInterface, public IFireInterface, public IExplosiveInterface, public IWinchBrickInterface, public IPhysicsReplicationInterface, public IContactModifyInterface {
+class BRICKRIGS_API ABrickVehicle : public APawn, public IBrickPawnInterface, public IViewTargetInterface, public IGenericTeamAgentInterface, public ISpawnPointInterface, public IFireInterface, public IWinchBrickInterface, public IPhysicsReplicationInterface, public IContactModifyInterface {
     GENERATED_BODY()
 public:
 private:

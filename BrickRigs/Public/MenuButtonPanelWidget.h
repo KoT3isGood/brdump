@@ -27,9 +27,6 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 NumButtonsPerRow;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float ButtonSpacing;
-    
 public:
     UMenuButtonPanelWidget();
     UFUNCTION(BlueprintCallable)

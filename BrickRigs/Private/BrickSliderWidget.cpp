@@ -13,6 +13,12 @@ void UBrickSliderWidget::SetValue(float NewValue) {
 void UBrickSliderWidget::SetMaxFractionalDigits(int32 InMaxDigits) {
 }
 
+void UBrickSliderWidget::SetIsReadOnly(bool bInReadOnly) {
+}
+
+void UBrickSliderWidget::SetIsMarquee(bool bInMarquee) {
+}
+
 void UBrickSliderWidget::SetCustomTextFormat(const FText& InFormat) {
 }
 
@@ -34,5 +40,7 @@ UBrickSliderWidget::UBrickSliderWidget() {
     this->ValueStep = 0.00f;
     this->ValueType = ENumericValueType::Float;
     this->MaxFractionalDigits = -1;
+    this->bIsReadOnly = false;
+    this->bIsMarquee = false;
 }
 

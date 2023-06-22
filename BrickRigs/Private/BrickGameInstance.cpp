@@ -28,7 +28,7 @@ UBrickGameInstance::UBrickGameInstance() {
     this->LoadingScreenWidget = NULL;
     this->WindowManagerWidget = NULL;
     this->MusicAudioComponent = NULL;
-    this->BrickStaticInfoClasses.AddDefaulted(434);
+    this->BrickStaticInfoClasses.AddDefaulted(440);
     this->BrickFilterClasses.AddDefaulted(20);
     this->BrickMaterials.AddDefaulted(19);
     this->BrickPatternClasses.AddDefaulted(30);
@@ -37,10 +37,10 @@ UBrickGameInstance::UBrickGameInstance() {
     this->SirenTypeClasses.AddDefaulted(5);
     this->ExplosiveMaterialClasses.AddDefaulted(4);
     this->InventoryItemClasses.AddDefaulted(41);
-    this->UIStyleClasses.AddDefaulted(4);
+    this->UIStyleClasses.AddDefaulted(5);
     this->WeatherConditions.AddDefaulted(9);
     this->LevelInfos.AddDefaulted(7);
     this->GameModeInfos.AddDefaulted(5);
-    this->BillboardImages.AddDefaulted(4);
+    this->BillboardImages.AddDefaulted(6);
 }
 

@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "BrickPropertyInterface.h"
+#include "ESearchSessionType.h"
 #include "EServerSortMethod.h"
 #include "MenuPageWidget.h"
 #include "ServerBrowserWidget.generated.h"
@@ -17,13 +18,13 @@ protected:
     UPagedListWidget* PagedList;
     
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    ESearchSessionType SearchSessionType;
+    
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     EServerSortMethod ServerSortMethod;
     
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bSearchPrivateServers;
-    
-    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
-    bool bSearchIncompatibleBuilds;
     
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString ServerSearchText;

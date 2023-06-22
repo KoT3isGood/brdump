@@ -1,9 +1,6 @@
 #include "ActuatorBrick.h"
 #include "Net/UnrealNetwork.h"
 
-void UActuatorBrick::OnRep_RepActuatorState() {
-}
-
 void UActuatorBrick::Interact_Actuate(ABrickPlayerController* OtherPC, float Val) {
 }
 

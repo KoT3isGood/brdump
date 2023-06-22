@@ -7,6 +7,7 @@ enum class EBrickEditorViewMode : uint8 {
     Default,
     Wireframe,
     Physics,
+    InputChannels,
     Max,
 };
 

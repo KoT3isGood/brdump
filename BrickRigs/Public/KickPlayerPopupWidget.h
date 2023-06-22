@@ -15,5 +15,16 @@ protected:
     
 public:
     UKickPlayerPopupWidget();
+protected:
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    void UpdateIsLoadingKick(bool bNewLoading);
+    
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    void UpdateCanRevokeKick(bool bCanRevoke);
+    
+public:
+    UFUNCTION(BlueprintCallable)
+    void RevokeKick();
+    
 };
 

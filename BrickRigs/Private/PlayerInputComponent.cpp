@@ -1,8 +1,5 @@
 #include "PlayerInputComponent.h"
 
-void UPlayerInputComponent::OnReleasedScoreboard() {
-}
-
 void UPlayerInputComponent::OnReleasedMoveCamera() {
 }
 

@@ -8,8 +8,10 @@ enum class EBrickUIBrushStyle : uint8 {
     Button,
     FolderButton,
     MapButton,
-    HoldKeyBorder,
     BorderlessButton,
+    KeyBorder,
+    Slider,
+    Spacer,
     Custom,
     Max,
 };

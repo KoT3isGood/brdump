@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Slate -ObjectName=ETextJustify -FallbackName=ETextJustify
-//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=ETextCommit -FallbackName=ETextCommit
 //CROSS-MODULE INCLUDE V2: -ModuleName=UMG -ObjectName=UserWidget -FallbackName=UserWidget
 #include "EBrickUIBrushStyle.h"
 #include "EBrickUIColorStyle.h"
+#include "EBrickUIPaddingStyle.h"
 #include "EBrickUITextStyle.h"
 #include "EValueChangedEventType.h"
 #include "BrickTextBoxWidget.generated.h"
@@ -36,10 +36,10 @@ public:
     bool bAllowMultiLine;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    bool bAutoUpdateFocus;
+    bool bIsPassword;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    bool bIsPassword;
+    bool bIsNumeric;
     
     UBrickTextBoxWidget();
 protected:
@@ -66,6 +66,9 @@ public:
     void SetPasswordVisible(bool bNewVisible);
     
     UFUNCTION(BlueprintCallable)
+    void SetPaddingStyle(EBrickUIPaddingStyle InPaddingStyle);
+    
+    UFUNCTION(BlueprintCallable)
     void SetMaxTextLength(int32 InMaxLength);
     
     UFUNCTION(BlueprintCallable)
@@ -78,7 +81,13 @@ public:
     void SetIsPassword(bool bNewIsPassword);
     
     UFUNCTION(BlueprintCallable)
+    void SetIsMarquee(bool bNewMarquee);
+    
+    UFUNCTION(BlueprintCallable)
     void SetHintText(const FText& InText);
+    
+    UFUNCTION(BlueprintCallable)
+    void SetCustomFocus(bool bNewUseCustomFocus, bool bNewFocused);
     
     UFUNCTION(BlueprintCallable)
     void SetColorStyle(EBrickUIColorStyle InColorStyle);
@@ -91,9 +100,6 @@ public:
     
 private:
     UFUNCTION(BlueprintCallable)
-    void OnTextCommitted(const FText& Text, TEnumAsByte<ETextCommit::Type> CommitMethod);
-    
-    UFUNCTION(BlueprintCallable)
     void OnTextChanged(const FText& NewText);
     
 public:
@@ -101,7 +107,13 @@ public:
     bool IsTyping() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsReadOnly() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsPasswordVisible() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsMarquee() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FText GetText() const;

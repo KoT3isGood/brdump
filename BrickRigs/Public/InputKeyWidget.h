@@ -2,11 +2,9 @@
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=InputCore -ObjectName=Key -FallbackName=Key
 //CROSS-MODULE INCLUDE V2: -ModuleName=UMG -ObjectName=UserWidget -FallbackName=UserWidget
+#include "KeyDisplayTableRow.h"
 #include "InputKeyWidget.generated.h"
 
-class UBrickBorder;
-class UBrickImage;
-class UBrickTextBlock;
 class UDataTable;
 
 UCLASS(Abstract, Blueprintable, EditInlineNew)
@@ -18,15 +16,6 @@ private:
     UDataTable* KeyDisplayTable;
     
 protected:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    UBrickBorder* KeyBorder;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    UBrickTextBlock* KeyTextBlock;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    UBrickImage* KeyImage;
-    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FKey Key;
     
@@ -38,6 +27,11 @@ protected:
     
 public:
     UInputKeyWidget();
+protected:
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    void UpdateDisplayInfo(const FKeyDisplayTableRow& DisplayInfo, bool bIsGamepadKey);
+    
+public:
     UFUNCTION(BlueprintCallable)
     void SetKey(const FKey& InKey, bool bInUsedAsModifier);
     

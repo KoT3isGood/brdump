@@ -8,5 +8,6 @@ void UObjectPropertyWidget::InitializeItem(int32 Item, FBrickComboBoxItemParams&
 
 UObjectPropertyWidget::UObjectPropertyWidget() {
     this->BrickComboBox = NULL;
+    this->IconSize = 128.00f;
 }
 

@@ -1,23 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=UMG -ObjectName=UserWidget -FallbackName=UserWidget
+#include "PropertyListInterface.h"
 #include "PropertyCategoryWidget.generated.h"
 
-class UPropertyContainerWidget;
-
 UCLASS(Abstract, Blueprintable, EditInlineNew)
-class BRICKRIGS_API UPropertyCategoryWidget : public UUserWidget {
+class BRICKRIGS_API UPropertyCategoryWidget : public UUserWidget, public IPropertyListInterface {
     GENERATED_BODY()
 public:
     UPropertyCategoryWidget();
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void UpdateContainerWidgetSlot(UPropertyContainerWidget* Widget, int32 Index, int32 NumPerRow);
+    void UpdateCategory(const FText& DisplayName);
     
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void UpdateCategory(bool bIsLastCategory);
     
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void AddContainerWidget(UPropertyContainerWidget* Widget);
-    
+    // Fix for true pure virtual functions not being implemented
 };
 

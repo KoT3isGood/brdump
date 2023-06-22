@@ -49,12 +49,12 @@ void UBrickComboBoxWidget::AddItemContainerWidget_Implementation(UBrickComboBoxI
 UBrickComboBoxWidget::UBrickComboBoxWidget() : UUserWidget(FObjectInitializer::Get()) {
     this->SelectedItemWidget = NULL;
     this->MenuWidget = NULL;
+    this->Button = NULL;
     this->ItemsPanel = NULL;
     this->ItemWidgetClass = NULL;
     this->ItemContainerWidgetClass = NULL;
     this->MenuWidgetClass = NULL;
     this->MaxListItems = -1;
     this->MaxItemsPerRow = 0;
-    this->ItemPadding = 10.00f;
 }
 

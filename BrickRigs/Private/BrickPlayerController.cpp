@@ -49,12 +49,6 @@ bool ABrickPlayerController::ServerSetSwitchBrickValue_Validate(USwitchBrick* Sw
     return true;
 }
 
-void ABrickPlayerController::ServerSetNextMatchSetting_Implementation(const FMatchSettings& NewSettings) {
-}
-bool ABrickPlayerController::ServerSetNextMatchSetting_Validate(const FMatchSettings& NewSettings) {
-    return true;
-}
-
 void ABrickPlayerController::ServerSetElevatorDirection_Implementation(AElevator* Elevator, EElevatorDirection Dir) {
 }
 bool ABrickPlayerController::ServerSetElevatorDirection_Validate(AElevator* Elevator, EElevatorDirection Dir) {
@@ -139,6 +133,12 @@ bool ABrickPlayerController::ServerOnProjectileHit_Validate(const FProjectileHit
     return true;
 }
 
+void ABrickPlayerController::ServerOnPlayerChangedMatchSettings_Implementation(const FMatchSettings& NewSettings, bool bNextMatch) {
+}
+bool ABrickPlayerController::ServerOnPlayerChangedMatchSettings_Validate(const FMatchSettings& NewSettings, bool bNextMatch) {
+    return true;
+}
+
 void ABrickPlayerController::ServerOnMeleeHit_Implementation(const FRepHitInfo& HitInfo) {
 }
 bool ABrickPlayerController::ServerOnMeleeHit_Validate(const FRepHitInfo& HitInfo) {
@@ -151,9 +151,9 @@ bool ABrickPlayerController::ServerKillCharacter_Validate() {
     return true;
 }
 
-void ABrickPlayerController::ServerKickPlayer_Implementation(ABrickPlayerState* OtherPlayerState, const FUniqueNetIdRepl& OtherPlayerId, const FString& KickReason, const FBrickDuration& KickDuration) {
+void ABrickPlayerController::ServerKickPlayer_Implementation(const FUniqueNetIdRepl& OtherPlayerId, const FString& KickReason, const FBrickDuration& KickDuration) {
 }
-bool ABrickPlayerController::ServerKickPlayer_Validate(ABrickPlayerState* OtherPlayerState, const FUniqueNetIdRepl& OtherPlayerId, const FString& KickReason, const FBrickDuration& KickDuration) {
+bool ABrickPlayerController::ServerKickPlayer_Validate(const FUniqueNetIdRepl& OtherPlayerId, const FString& KickReason, const FBrickDuration& KickDuration) {
     return true;
 }
 
@@ -217,12 +217,6 @@ bool ABrickPlayerController::ServerAttachWinchBrick_Validate(UWinchBrick* WinchB
     return true;
 }
 
-void ABrickPlayerController::ServerApplyMatchSettings_Implementation(bool bFadeIn) {
-}
-bool ABrickPlayerController::ServerApplyMatchSettings_Validate(bool bFadeIn) {
-    return true;
-}
-
 void ABrickPlayerController::ServerAccessInventory_Implementation(UInventoryComponent* InInventory) {
 }
 bool ABrickPlayerController::ServerAccessInventory_Validate(UInventoryComponent* InInventory) {
@@ -262,16 +256,10 @@ void ABrickPlayerController::ClientSentWrongAdminPassword_Implementation(uint8 A
 void ABrickPlayerController::ClientReceiveKickedPlayerList_Implementation(const FKickedPlayerList& PlayerList, uint8 RequestID) {
 }
 
-void ABrickPlayerController::ClientReceiveChatMessage_Implementation(ABrickPlayerState* Sender, EChatContext Context, const FText& Message) {
+void ABrickPlayerController::ClientReceiveChatMessages_Implementation(const TArray<FBrickChatMessage>& ChatMessages) {
 }
 
-void ABrickPlayerController::ClientOnPlayerLeft_Implementation(const FString& PlayerName, TEnumAsByte<ETeamAttitude::Type> TeamAttitude, bool bWasKicked) {
-}
-
-void ABrickPlayerController::ClientOnPlayerJoined_Implementation(const FString& PlayerName, TEnumAsByte<ETeamAttitude::Type> TeamAttitude) {
-}
-
-void ABrickPlayerController::ClientOnPlayerDied_Implementation(ABrickPlayerState* Victim, ABrickPlayerState* Killer) {
+void ABrickPlayerController::ClientReceiveChatMessage_Implementation(const FBrickChatMessage& ChatMessage) {
 }
 
 void ABrickPlayerController::ClientOnFailedToRestart_Implementation(EPlayerSpawnResult SpawnResult, const FVehicleSpawnProperties& Props) {

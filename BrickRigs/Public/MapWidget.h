@@ -1,5 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=FloatInterval -FallbackName=FloatInterval
 #include "EMeasurementSystem.h"
 #include "HUDIconCanvasWidget.h"
 #include "HUDIconProperties.h"
@@ -34,13 +35,13 @@ protected:
     float MinViewportSize;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float ZoomCurvePower;
+    float PanSpeed;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float ZoomSpeed;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float WheelZoomStep;
+    float ZoomStep;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float ViewportInterpSpeed;
@@ -56,6 +57,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float GridSize;
+    
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
+    FFloatInterval ViewportSizeIconScaleRange;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FHUDIconProperties CursorIconProperties;

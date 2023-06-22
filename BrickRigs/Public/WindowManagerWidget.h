@@ -8,7 +8,6 @@
 class UCanvasPanel;
 class UContextMenuWidget;
 class UHUDContainerWidget;
-class UIntroSequenceWidget;
 class UMainWidgetBase;
 class UMenuAnchorWidget;
 class UMenuWidget;
@@ -50,7 +49,7 @@ protected:
     UCanvasPanel* MainCanvasPanel;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSoftClassPtr<UIntroSequenceWidget> IntroSequenceWidgetClass;
+    TSoftClassPtr<UMainWidgetBase> IntroSequenceWidgetClass;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftClassPtr<UMenuWidget> MenuWidgetClass;
@@ -72,5 +71,12 @@ protected:
     
 public:
     UWindowManagerWidget();
+    UFUNCTION(BlueprintCallable)
+    void OnIntroSequenceFinished();
+    
+protected:
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    void AddActiveWidget(UMainWidgetBase* Widget);
+    
 };
 

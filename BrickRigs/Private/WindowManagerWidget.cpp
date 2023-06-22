@@ -1,5 +1,9 @@
 #include "WindowManagerWidget.h"
 
+void UWindowManagerWidget::OnIntroSequenceFinished() {
+}
+
+
 UWindowManagerWidget::UWindowManagerWidget() {
     this->MenuAnchorWidget = NULL;
     this->CurrentTooltipWidget = NULL;
@@ -8,6 +12,6 @@ UWindowManagerWidget::UWindowManagerWidget() {
     this->PopupContainerClass = NULL;
     this->ContextMenuWidgetClass = NULL;
     this->TooltipWidgetClass = NULL;
-    this->TooltipOffset = 30.00f;
+    this->TooltipOffset = 0.00f;
 }
 

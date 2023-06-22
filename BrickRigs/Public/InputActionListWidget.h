@@ -39,13 +39,13 @@ protected:
     TSoftClassPtr<UBindKeyPopupWidget> BindKeyPopupClass;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float ActionPadding;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UInputCategory*> InputCategories;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EInputActionListMode InputActionListMode;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float QuickAccessDisplayTime;
     
 public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -61,6 +61,9 @@ public:
     UWidget* GetWidgetToFocus() const;
     
 protected:
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    void FadeIn();
+    
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void AddCategoryWidget(UInputActionCategoryWidget* Widget, int32 CategoryIndex);
     

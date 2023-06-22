@@ -7,5 +7,6 @@ enum class EOnlineUGCVisibility : uint8 {
     Public,
     FriendsOnly,
     Private,
+    Unlisted,
 };
 

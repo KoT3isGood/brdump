@@ -15,7 +15,6 @@ class ATrain;
 class AWorldSetupActor;
 class UObject;
 class UProjectileManagerComponent;
-class UThumbnailManagerComponent;
 
 UCLASS(Blueprintable)
 class BRICKRIGS_API ABrickWorldSettings : public AWorldSettings {
@@ -38,9 +37,6 @@ public:
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
     UProjectileManagerComponent* ProjectileManager;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
-    UThumbnailManagerComponent* ThumbnailManager;
     
 public:
     UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, NoClear, meta=(AllowPrivateAccess=true))

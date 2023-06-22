@@ -39,6 +39,12 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText CustomTextFormat;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bIsReadOnly;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bIsMarquee;
+    
 public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnSliderValueChanged OnValueChangedDelegate;
@@ -60,6 +66,12 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void SetMaxFractionalDigits(int32 InMaxDigits);
+    
+    UFUNCTION(BlueprintCallable)
+    void SetIsReadOnly(bool bInReadOnly);
+    
+    UFUNCTION(BlueprintCallable)
+    void SetIsMarquee(bool bInMarquee);
     
     UFUNCTION(BlueprintCallable)
     void SetCustomTextFormat(const FText& InFormat);

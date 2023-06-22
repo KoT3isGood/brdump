@@ -8,7 +8,7 @@ struct FBrickUIBrushStyle {
     GENERATED_BODY()
 public:
     UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
-    FSlateBrush Brushes[9];
+    FSlateBrush Brushes[13];
     
     BRICKRIGS_API FBrickUIBrushStyle();
 };

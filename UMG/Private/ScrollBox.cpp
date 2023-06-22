@@ -3,6 +3,9 @@
 void UScrollBox::SetWheelScrollMultiplier(float NewWheelScrollMultiplier) {
 }
 
+void UScrollBox::SetSlotSpacing(float NewSpacing) {
+}
+
 void UScrollBox::SetScrollWhenFocusChanges(EScrollWhenFocusChanges NewScrollWhenFocusChanges) {
 }
 
@@ -61,6 +64,7 @@ UScrollBox::UScrollBox() {
     this->Style = NULL;
     this->BarStyle = NULL;
     this->Orientation = Orient_Vertical;
+    this->SlotSpacing = 0.00f;
     this->ScrollBarVisibility = ESlateVisibility::Visible;
     this->ConsumeMouseWheel = EConsumeMouseWheel::WhenScrollingPossible;
     this->AlwaysShowScrollbar = false;
