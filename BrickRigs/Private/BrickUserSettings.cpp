@@ -25,8 +25,8 @@ UBrickUserSettings::UBrickUserSettings() {
     this->bToggleSprint = false;
     this->bToggleCrouch = false;
     this->bEnableDepthOfField = true;
-    this->MotionBlurScale = 1.00f;
-    this->AntiAliasingMethod = AAM_TemporalAA;
+    this->MotionBlurScale = 0.00f;
+    this->AntiAliasingMethod = AAM_FXAA;
     this->EditorMirrorMode = EBrickEditorMirrorMode::None;
     this->EditorViewMode = EBrickEditorViewMode::Default;
     this->EditorMouseMoveSensitivity = 0.50f;
@@ -37,9 +37,9 @@ UBrickUserSettings::UBrickUserSettings() {
     this->bEditorSnappingEnabled = true;
     this->bEditorGizmoWorldSpace = false;
     this->EditorZoomRatio = 0.00f;
-    this->EditorCameraSpeedRatio = 0.25f;
+    this->EditorCameraSpeedRatio = 0.10f;
     this->FreeCamSpeedRatio = 0.88f;
-    this->FreeCamShiftSpeedRatio = 1.00f;
+    this->FreeCamShiftSpeedRatio = 0.30f;
     this->ProjectileCamZoomRatio = 0.25f;
 }
 
