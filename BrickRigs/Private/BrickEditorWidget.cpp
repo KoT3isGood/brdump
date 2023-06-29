@@ -3,6 +3,7 @@
 
 
 
+
 void UBrickEditorWidget::OnPlacableSearchTextChanged(const FText& NewText, EValueChangedEventType EventType) {
 }
 

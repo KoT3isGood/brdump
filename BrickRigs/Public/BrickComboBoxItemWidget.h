@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "BrickComboBoxItemParams.h"
+#include "BrickUserWidget.h"
 #include "EBrickUIColorStyle.h"
 #include "EBrickUIStyleState.h"
-#include "RadioButtonWidget.h"
 #include "BrickComboBoxItemWidget.generated.h"
 
 class UBrickImage;
 class UBrickTextBlock;
 
 UCLASS(Abstract, Blueprintable, EditInlineNew)
-class BRICKRIGS_API UBrickComboBoxItemWidget : public URadioButtonWidget {
+class BRICKRIGS_API UBrickComboBoxItemWidget : public UBrickUserWidget {
     GENERATED_BODY()
 public:
 protected:

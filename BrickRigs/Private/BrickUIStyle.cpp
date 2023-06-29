@@ -1,5 +1,8 @@
 #include "BrickUIStyle.h"
 
+void UBrickUIStyle::UnbindUIStyle(UObject* Object) {
+}
+
 EBrickUIStyleState UBrickUIStyle::SwitchButtonStyleState(EBrickUIStyleState StyleState) {
     return EBrickUIStyleState::Default;
 }
@@ -24,6 +27,9 @@ void UBrickUIStyle::SetBrush(EBrickUIBrushStyle BrushStyle, EBrickUIStyleState S
 
 EBrickUIColorStyle UBrickUIStyle::InvertTeamAttitudeColorStyle(EBrickUIColorStyle ColorStyle) {
     return EBrickUIColorStyle::Default;
+}
+
+void UBrickUIStyle::GetUIStyle(UBrickUIStyle::FOnUIStyleChangedDynamic Delegate) {
 }
 
 FTextBlockStyle UBrickUIStyle::GetTextStyle(EBrickUITextStyle TextStyle, const FTextBlockStyle& Fallback) const {

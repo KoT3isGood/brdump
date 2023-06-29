@@ -249,10 +249,10 @@ void UGameUserSettings::ApplyHardwareBenchmarkResults() {
 UGameUserSettings::UGameUserSettings() {
     this->bUseVSync = false;
     this->bUseDynamicResolution = false;
-    this->ResolutionSizeX = 1920;
-    this->ResolutionSizeY = 1080;
-    this->LastUserConfirmedResolutionSizeX = 1920;
-    this->LastUserConfirmedResolutionSizeY = 1080;
+    this->ResolutionSizeX = 2560;
+    this->ResolutionSizeY = 1369;
+    this->LastUserConfirmedResolutionSizeX = 2560;
+    this->LastUserConfirmedResolutionSizeY = 1369;
     this->WindowPosX = -1;
     this->WindowPosY = -1;
     this->FullscreenMode = 1;
@@ -261,7 +261,7 @@ UGameUserSettings::UGameUserSettings() {
     this->Version = 5;
     this->AudioQualityLevel = 0;
     this->LastConfirmedAudioQualityLevel = 0;
-    this->FrameRateLimit = 240.00f;
+    this->FrameRateLimit = 165.00f;
     this->DesiredScreenWidth = 1280;
     this->bUseDesiredScreenHeight = false;
     this->DesiredScreenHeight = 720;

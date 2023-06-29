@@ -68,6 +68,9 @@ protected:
     void UpdateSelection(const FText& SelectionName);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    void UpdateEditorUIScale(float NewScale);
+    
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void UpdateCanPlaceObjects(bool bNewCanPlace);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)

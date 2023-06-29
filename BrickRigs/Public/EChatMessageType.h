@@ -10,6 +10,7 @@ enum class EChatMessageType : uint8 {
     Leave,
     Kick,
     JoinBanned,
+    Unban,
     Death,
     MatchSettings,
     VehicleSpawn,

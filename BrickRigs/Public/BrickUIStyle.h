@@ -19,10 +19,14 @@
 #include "ObjectPropertyItemInterface.h"
 #include "BrickUIStyle.generated.h"
 
+class UBrickUIStyle;
+
 UCLASS(Abstract, Blueprintable)
 class BRICKRIGS_API UBrickUIStyle : public UObject, public IObjectPropertyItemInterface {
     GENERATED_BODY()
 public:
+    DECLARE_DYNAMIC_DELEGATE_OneParam(FOnUIStyleChangedDynamic, const UBrickUIStyle*, Style);
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText StyleDisplayName;
     
@@ -39,7 +43,7 @@ public:
     FBrickUIBrushStyle BrushStyles[8];
     
     UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
-    FBrickUIColorStyle ColorStyles[5];
+    FBrickUIColorStyle ColorStyles[7];
     
     UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FTextBlockStyle TextStyles[9];
@@ -51,6 +55,9 @@ public:
     FMargin PaddingStyles[7];
     
     UBrickUIStyle();
+    UFUNCTION(BlueprintCallable)
+    static void UnbindUIStyle(UObject* Object);
+    
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static EBrickUIStyleState SwitchButtonStyleState(EBrickUIStyleState StyleState);
     
@@ -76,6 +83,9 @@ protected:
 public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static EBrickUIColorStyle InvertTeamAttitudeColorStyle(EBrickUIColorStyle ColorStyle);
+    
+    UFUNCTION(BlueprintCallable)
+    static void GetUIStyle(UBrickUIStyle::FOnUIStyleChangedDynamic Delegate);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FTextBlockStyle GetTextStyle(EBrickUITextStyle TextStyle, const FTextBlockStyle& Fallback) const;

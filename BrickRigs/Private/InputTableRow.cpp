@@ -6,6 +6,7 @@ FInputTableRow::FInputTableRow() {
     this->InputMenuCategory = NULL;
     this->InputContextCategory = NULL;
     this->bShowInQuickAccess = false;
+    this->bShowInEditorTopBar = false;
     this->bConsumeInput = false;
 }
 

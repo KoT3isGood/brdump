@@ -37,7 +37,7 @@ UBrickGameInstance::UBrickGameInstance() {
     this->SirenTypeClasses.AddDefaulted(5);
     this->ExplosiveMaterialClasses.AddDefaulted(4);
     this->InventoryItemClasses.AddDefaulted(41);
-    this->UIStyleClasses.AddDefaulted(5);
+    this->UIStyleClasses.AddDefaulted(6);
     this->WeatherConditions.AddDefaulted(9);
     this->LevelInfos.AddDefaulted(7);
     this->GameModeInfos.AddDefaulted(5);

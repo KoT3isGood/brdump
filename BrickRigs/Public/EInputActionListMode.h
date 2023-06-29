@@ -7,7 +7,6 @@ enum class EInputActionListMode : uint8 {
     InputHelpClosed,
     InputHelpOpen,
     ContextMenu,
-    EditorTools,
     EditorTopBar,
 };
 
