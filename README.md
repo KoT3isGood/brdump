@@ -1,12 +1,3 @@
 # Unofficial Brick Rigs Dump
-1.4.3 ✅ Will be deleted
+4GB OF HAPPINESS YOU CANT FIND IN BR SDK BUT NOW
 
-1.4.4 ❌ Nobody cares about this version
-
-1.4.5 ✅
-
-1.5 exp 1 ✅
-
-1.5 exp 2 ✅
-
-1.5.1 ✅
