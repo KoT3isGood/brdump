@@ -8,7 +8,7 @@ struct FBrickUIColorStyle {
     GENERATED_BODY()
 public:
     UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
-    FLinearColor Colors[13];
+    FLinearColor Colors[14];
     
     BRICKRIGS_API FBrickUIColorStyle();
 };

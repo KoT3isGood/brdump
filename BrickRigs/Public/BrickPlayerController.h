@@ -155,7 +155,7 @@ private:
     void ServerOnProjectileHit(const FProjectileHitInfo& HitInfo);
     
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
-    void ServerOnPlayerChangedMatchSettings(const FMatchSettings& NewSettings, bool bNextMatch);
+    void ServerOnPlayerChangedMatchSettings(const FMatchSettings& NewSettings, bool bApply, bool bFade);
     
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerOnMeleeHit(const FRepHitInfo& HitInfo);
@@ -197,6 +197,9 @@ public:
 private:
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerAttachWinchBrick(UWinchBrick* WinchBrick, const FWinchAttachTarget& AttachTarget);
+    
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
+    void ServerApplyMatchSettings(bool bFade);
     
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerAccessInventory(UInventoryComponent* InInventory);

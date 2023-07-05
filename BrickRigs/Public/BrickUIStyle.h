@@ -43,7 +43,7 @@ public:
     FBrickUIBrushStyle BrushStyles[8];
     
     UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
-    FBrickUIColorStyle ColorStyles[7];
+    FBrickUIColorStyle ColorStyles[8];
     
     UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FTextBlockStyle TextStyles[9];

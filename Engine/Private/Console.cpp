@@ -2,6 +2,6 @@
 
 UConsole::UConsole() {
     this->ConsoleTargetPlayer = NULL;
-    this->HistoryBuffer.AddDefaulted(15);
+    this->HistoryBuffer.AddDefaulted(16);
 }
 

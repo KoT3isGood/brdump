@@ -12,7 +12,7 @@ enum class EBrickUITextStyle : uint8 {
     Negative,
     Neutral,
     HUD,
-    Logo,
+    HighContrast,
     Custom,
     Max,
 };

@@ -133,9 +133,9 @@ bool ABrickPlayerController::ServerOnProjectileHit_Validate(const FProjectileHit
     return true;
 }
 
-void ABrickPlayerController::ServerOnPlayerChangedMatchSettings_Implementation(const FMatchSettings& NewSettings, bool bNextMatch) {
+void ABrickPlayerController::ServerOnPlayerChangedMatchSettings_Implementation(const FMatchSettings& NewSettings, bool bApply, bool bFade) {
 }
-bool ABrickPlayerController::ServerOnPlayerChangedMatchSettings_Validate(const FMatchSettings& NewSettings, bool bNextMatch) {
+bool ABrickPlayerController::ServerOnPlayerChangedMatchSettings_Validate(const FMatchSettings& NewSettings, bool bApply, bool bFade) {
     return true;
 }
 
@@ -214,6 +214,12 @@ bool ABrickPlayerController::ServerCheatMoney_Validate(float Amount) {
 void ABrickPlayerController::ServerAttachWinchBrick_Implementation(UWinchBrick* WinchBrick, const FWinchAttachTarget& AttachTarget) {
 }
 bool ABrickPlayerController::ServerAttachWinchBrick_Validate(UWinchBrick* WinchBrick, const FWinchAttachTarget& AttachTarget) {
+    return true;
+}
+
+void ABrickPlayerController::ServerApplyMatchSettings_Implementation(bool bFade) {
+}
+bool ABrickPlayerController::ServerApplyMatchSettings_Validate(bool bFade) {
     return true;
 }
 

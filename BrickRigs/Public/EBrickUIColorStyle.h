@@ -11,6 +11,7 @@ enum class EBrickUIColorStyle : uint8 {
     Neutral,
     EditorOutline,
     GameLogo,
+    DeveloperLogo,
     Custom,
     Max,
 };

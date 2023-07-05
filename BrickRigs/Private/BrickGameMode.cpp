@@ -47,6 +47,7 @@ ABrickGameMode::ABrickGameMode() {
     this->bEndRoundWhenTeamEliminated = false;
     this->bEndMatchWhenTeamEliminated = false;
     this->bAllowRestartDuringRound = true;
+    this->bAllowRestartWhilePlaying = false;
     this->bResetLevelAndPlayersEveryRound = true;
     this->bRespawnLoadoutOnRestart = true;
     this->bAllowInteractionWhileUnconscious = false;

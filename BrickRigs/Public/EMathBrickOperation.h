@@ -22,11 +22,17 @@ enum class EMathBrickOperation : uint8 {
     Floor,
     Sqrt,
     Sin,
+    SinDeg,
     Asin,
+    AsinDeg,
     Cos,
+    CosDeg,
     Acos,
+    AcosDeg,
     Tan,
+    TanDeg,
     Atan,
-    MAX_Unary = 0x15,
+    AtanDeg,
+    MAX_Unary = 0x1A,
 };
 

@@ -5,6 +5,7 @@
 UENUM(BlueprintType)
 enum class EBrickUIStyleState : uint8 {
     Default,
+    Border,
     Button,
     Pressed,
     Focused,

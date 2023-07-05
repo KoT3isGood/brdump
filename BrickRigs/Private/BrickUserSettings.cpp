@@ -7,7 +7,10 @@ UBrickUserSettings* UBrickUserSettings::GetUserSettings() {
 UBrickUserSettings::UBrickUserSettings() {
     this->HoldKeyTime = 0.30f;
     this->MouseTapTime = 0.10f;
-    this->HostServerType = EHostServerType::Private;
+    this->ConfigVersion = TEXT("1.5.2");
+    this->HostServerType = EHostServerType::None;
+    this->bApplyMatchSettings = true;
+    this->bFadeMatchSettings = true;
     this->hudvisibility = EHUDVisibility::Full;
     this->MeasurementSystem = EMeasurementSystem::Metric;
     this->ChatContext = EChatContext::Global;
@@ -38,9 +41,9 @@ UBrickUserSettings::UBrickUserSettings() {
     this->bEditorSnappingEnabled = true;
     this->bEditorGizmoWorldSpace = false;
     this->EditorZoomRatio = 0.00f;
-    this->EditorCameraSpeedRatio = 0.15f;
-    this->FreeCamSpeedRatio = 0.05f;
-    this->FreeCamShiftSpeedRatio = 0.55f;
+    this->EditorCameraSpeedRatio = 0.00f;
+    this->FreeCamSpeedRatio = 0.00f;
+    this->FreeCamShiftSpeedRatio = 0.31f;
     this->ProjectileCamZoomRatio = 0.25f;
 }
 

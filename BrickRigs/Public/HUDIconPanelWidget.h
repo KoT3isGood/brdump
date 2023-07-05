@@ -5,7 +5,6 @@
 #include "Templates/SubclassOf.h"
 #include "HUDIconPanelWidget.generated.h"
 
-class UHUDIconComponent;
 class UHUDIconContainerWidget;
 class UHUDIconWidget;
 class UInteractionWidget;
@@ -15,9 +14,6 @@ class BRICKRIGS_API UHUDIconPanelWidget : public UUserWidget {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
-    TMap<UHUDIconComponent*, UHUDIconContainerWidget*> HUDIconComponentsMap;
-    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
     TArray<UHUDIconWidget*> UnusedHUDIconWidgets;
     

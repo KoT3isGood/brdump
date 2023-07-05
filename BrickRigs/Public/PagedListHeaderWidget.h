@@ -21,7 +21,7 @@ protected:
     void UpdateMass(float InMass, float InMaxMass);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void UpdateEntry(const FText& InTitleText, bool bInHasUnsavedChanges);
+    void UpdateEntry(const FText& InTitleText, bool bInHasEntry, bool bInHasUnsavedChanges);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void UpdateDimensions(const FVector& InDimensions, const FVector& InMaxDimensions);

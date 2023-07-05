@@ -65,7 +65,7 @@ public:
     UBrickEditorWidget();
 protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void UpdateSelection(const FText& SelectionName);
+    void UpdateSelection(const FText& SelectionName, bool bAnythingSelected);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void UpdateEditorUIScale(float NewScale);
